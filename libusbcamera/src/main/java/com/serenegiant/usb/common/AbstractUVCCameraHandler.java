@@ -542,7 +542,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
         }
 
         public void handleStartPreview(final Object surface) {
-            if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview:");
+            if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview:"+(mUVCCamera == null)+mIsPreviewing);
             if ((mUVCCamera == null) || mIsPreviewing) return;
             try {
                 mUVCCamera.setPreviewSize(mWidth, mHeight, 1, 31, mPreviewMode, mBandwidthFactor);
