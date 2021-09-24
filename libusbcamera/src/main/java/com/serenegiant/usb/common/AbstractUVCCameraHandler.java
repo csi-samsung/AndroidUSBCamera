@@ -449,6 +449,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
             mWeakParent = new WeakReference<>(parent);
             mWeakCameraView = new WeakReference<>(cameraView);
 //			loadShutterSound(parent);
+            if (DEBUG) Log.v(TAG_THREAD, "CameraThread:"+mWidth+","+mHeight+","+mPreviewMode);
         }
 
         @Override
@@ -545,8 +546,8 @@ public abstract class AbstractUVCCameraHandler extends Handler {
             if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview:"+(mUVCCamera == null)+mIsPreviewing);
             if ((mUVCCamera == null) || mIsPreviewing) return;
             try {
-                if (DEBUG) Log.v(TAG_THREAD, "setPreviewSize:"+mWidth+","+mHeight+","+mPreviewMode+","+mBandwidthFactor);
-                mUVCCamera.setPreviewSize(mWidth, mHeight, 1, 31, mPreviewMode, mBandwidthFactor);
+                if (DEBUG) Log.v(TAG_THREAD, "setPreviewSize:"+mWidth+","+mHeight+","+mPreviewMode);
+                mUVCCamera.setPreviewSize(mWidth, mHeight, mPreviewMode);
                 // 获取USB Camera预览数据，使用NV21颜色会失真
                 // 无论使用YUV还是MPEG，setFrameCallback的设置效果一致
 //				mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_NV21);
