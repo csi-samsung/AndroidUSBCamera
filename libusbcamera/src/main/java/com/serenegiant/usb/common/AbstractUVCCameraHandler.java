@@ -551,7 +551,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
                 // 无论使用YUV还是MPEG，setFrameCallback的设置效果一致
 //				mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_NV21);
                 mUVCCamera.setPreviewSize(mWidth, mHeight, mPreviewMode);
-                mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_YUV);
+                //mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_YUV);
                 if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview ok");
             } catch (final IllegalArgumentException e) {
                 try {
