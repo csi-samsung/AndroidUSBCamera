@@ -547,11 +547,11 @@ public abstract class AbstractUVCCameraHandler extends Handler {
             if ((mUVCCamera == null) || mIsPreviewing) return;
             try {
                 if (DEBUG) Log.v(TAG_THREAD, "setPreviewSize:"+mWidth+","+mHeight+","+mPreviewMode);
-                mUVCCamera.setPreviewSize(mWidth, mHeight, mPreviewMode);
+                mUVCCamera.setPreviewSize(mWidth, mHeight, 1, 31, mPreviewMode, mBandwidthFactor);
                 // 获取USB Camera预览数据，使用NV21颜色会失真
                 // 无论使用YUV还是MPEG，setFrameCallback的设置效果一致
 //				mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_NV21);
-                mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_YUV420SP);
+                mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_RAW);
                 if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview ok");
             } catch (final IllegalArgumentException e) {
                 if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview exception: "+e.getMessage());
@@ -560,7 +560,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
                     if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview fallback to YUV mode");
                     if (DEBUG) Log.v(TAG_THREAD, "setPreviewSize:"+mWidth+","+mHeight+","+UVCCamera.DEFAULT_PREVIEW_MODE+","+mBandwidthFactor);
                     mUVCCamera.setPreviewSize(mWidth, mHeight, 1, 31, UVCCamera.DEFAULT_PREVIEW_MODE, mBandwidthFactor);
-                    mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_YUV420SP);
+                    mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_RAW);
                     if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview ok");
                 } catch (final IllegalArgumentException e1) {
                     if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview exception again: "+e1.getMessage());
