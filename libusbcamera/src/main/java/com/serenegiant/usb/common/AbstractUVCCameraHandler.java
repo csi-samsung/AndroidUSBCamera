@@ -545,6 +545,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
             if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview:"+(mUVCCamera == null)+mIsPreviewing);
             if ((mUVCCamera == null) || mIsPreviewing) return;
             try {
+                if (DEBUG) Log.v(TAG_THREAD, "setPreviewSize:"+mWidth+","+mHeight+","+mPreviewMode+","+mBandwidthFactor);
                 mUVCCamera.setPreviewSize(mWidth, mHeight, 1, 31, mPreviewMode, mBandwidthFactor);
                 // 获取USB Camera预览数据，使用NV21颜色会失真
                 // 无论使用YUV还是MPEG，setFrameCallback的设置效果一致
