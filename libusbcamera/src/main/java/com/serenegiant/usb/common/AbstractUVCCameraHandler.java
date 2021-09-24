@@ -557,6 +557,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
                 try {
                     // fallback to YUV mode
                     if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview fallback to YUV mode");
+                    if (DEBUG) Log.v(TAG_THREAD, "setPreviewSize:"+mWidth+","+mHeight+","+UVCCamera.DEFAULT_PREVIEW_MODE+","+mBandwidthFactor);
                     mUVCCamera.setPreviewSize(mWidth, mHeight, 1, 31, UVCCamera.DEFAULT_PREVIEW_MODE, mBandwidthFactor);
                     mUVCCamera.setFrameCallback(mIFrameCallback, UVCCamera.PIXEL_FORMAT_YUV420SP);
                     if (DEBUG) Log.v(TAG_THREAD, "handleStartPreview ok");
