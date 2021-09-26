@@ -34,14 +34,11 @@ public class UVCCameraHelper {
     private static final String TAG = "UVCCameraHelper";
     private int previewWidth = 640;
     private int previewHeight = 480;
-    public static final int FRAME_FORMAT_YUYV = UVCCamera.FRAME_FORMAT_YUYV;
-    // Default using MJPEG
-    // if your device is connected,but have no images
-    // please try to change it to FRAME_FORMAT_YUYV
-    public static final int FRAME_FORMAT_MJPEG = UVCCamera.FRAME_FORMAT_MJPEG;
+    public static final int FRAME_FORMAT_UNCOMPRESSED = UVCCamera.FRAME_FORMAT_UNCOMPRESSED;
+    public static final int FRAME_FORMAT_COMPRESSED = UVCCamera.FRAME_FORMAT_COMPRESSED;
     public static final int MODE_BRIGHTNESS = UVCCamera.PU_BRIGHTNESS;
     public static final int MODE_CONTRAST = UVCCamera.PU_CONTRAST;
-    private int mFrameFormat = FRAME_FORMAT_MJPEG;
+    private int mFrameFormat = FRAME_FORMAT_UNCOMPRESSED;
 
     private static UVCCameraHelper mCameraHelper;
     // USB Manager
