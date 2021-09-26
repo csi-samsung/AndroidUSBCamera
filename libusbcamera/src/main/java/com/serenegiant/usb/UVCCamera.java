@@ -51,8 +51,8 @@ public class UVCCamera {
 	public static final int DEFAULT_PREVIEW_MAX_FPS = 30;
 	public static final float DEFAULT_BANDWIDTH = 1.0f;
 
-	public static final int FRAME_FORMAT_YUYV = 0;
-	public static final int FRAME_FORMAT_MJPEG = 1;
+	public static final int FRAME_FORMAT_UNCOMPRESSED = 0;
+	public static final int FRAME_FORMAT_COMPRESSED = 1;
 
 	public static final int PIXEL_FORMAT_RAW = 0;
 	public static final int PIXEL_FORMAT_YUV = 1;
@@ -60,6 +60,8 @@ public class UVCCamera {
 	public static final int PIXEL_FORMAT_RGBX = 3;
 	public static final int PIXEL_FORMAT_YUV420SP = 4;	// NV12
 	public static final int PIXEL_FORMAT_NV21 = 5;		// = YVU420SemiPlanar,NV21，但是保存到jpg颜色失真
+	public static final int PIXEL_FORMAT_RGB = 6;
+	public static final int PIXEL_FORMAT_BGR = 7;
 
 	//--------------------------------------------------------------------------------
     public static final int	CTRL_SCANNING		= 0x00000001;	// D0:  Scanning Mode
@@ -127,7 +129,7 @@ public class UVCCamera {
 	private UsbControlBlock mCtrlBlock;
     protected long mControlSupports;			// カメラコントロールでサポートしている機能フラグ
     protected long mProcSupports;				// プロセッシングユニットでサポートしている機能フラグ
-    protected int mCurrentFrameFormat = FRAME_FORMAT_MJPEG;
+    protected int mCurrentFrameFormat = FRAME_FORMAT_UNCOMPRESSED;
 	protected int mCurrentWidth = DEFAULT_PREVIEW_WIDTH, mCurrentHeight = DEFAULT_PREVIEW_HEIGHT;
 	protected float mCurrentBandwidthFactor = DEFAULT_BANDWIDTH;
     protected String mSupportedSize;
