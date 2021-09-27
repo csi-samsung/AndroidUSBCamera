@@ -16,4 +16,5 @@
 #   public *;
 #}
 
--keep class * extends androidx.fragment.app.Fragment{}
+-keep class com.serenegiant.usb.common.AbstractUVCCameraHandler { *; }
+-keep class com.serenegiant.usb.common.UVCCameraHandler { *; }
