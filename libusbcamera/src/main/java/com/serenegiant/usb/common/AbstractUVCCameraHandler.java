@@ -60,7 +60,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
  */
 public abstract class AbstractUVCCameraHandler extends Handler {
 
-    private static final boolean DEBUG = false;    // TODO set false on release
+    private static final boolean DEBUG = true;    // TODO set false on release
     private static final String TAG = "AbsUVCCameraHandler";
 
 
