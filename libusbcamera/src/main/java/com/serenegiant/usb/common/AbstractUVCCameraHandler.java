@@ -117,7 +117,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
     private volatile boolean mReleased;
     protected static boolean isCaptureStill;
 
-    protected AbstractUVCCameraHandler(final CameraThread thread) {
+    public AbstractUVCCameraHandler(final CameraThread thread) {
         mWeakThread = new WeakReference<CameraThread>(thread);
     }
 
