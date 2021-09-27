@@ -434,7 +434,7 @@ public abstract class AbstractUVCCameraHandler extends Handler {
          * format 颜色格式，0为FRAME_FORMAT_YUYV；1为FRAME_FORMAT_MJPEG
          * bandwidthFactor
          */
-        CameraThread(final Class<? extends AbstractUVCCameraHandler> clazz,
+        public CameraThread(final Class<? extends AbstractUVCCameraHandler> clazz,
                      final Activity parent, final CameraViewInterface cameraView,
                      final int encoderType, final int width, final int height, final int format,
                      final float bandwidthFactor) {
