@@ -16,5 +16,6 @@
 #   public *;
 #}
 
--keeppackagenames com.serenegiant.usb.*
--keep class * extends androidx.fragment.app.Fragment{}
+-keep class com.serenegiant.usb.*.*.* { *; }
+-keep class com.serenegiant.usb.*.* { *; }
+-keep class com.serenegiant.usb.* { *; }
