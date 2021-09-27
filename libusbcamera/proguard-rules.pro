@@ -16,6 +16,6 @@
 #   public *;
 #}
 
--keep public class com.serenegiant.usb.common.AbstractUVCCameraHandler extends android.os.Handler {
+-keep public abstract class com.serenegiant.usb.common.AbstractUVCCameraHandler extends android.os.Handler {
     *;
 }
