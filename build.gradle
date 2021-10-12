@@ -30,7 +30,7 @@ ext {
     versionTarget = 29
     // if hope supporting 4.4
     // please modify it to 16
-    minSdkVersion = 29
+    minSdkVersion = 23
     versionCode = 100
     versionNameString = '2.3.5.20210316'
     javaSourceCompatibility = JavaVersion.VERSION_1_8
